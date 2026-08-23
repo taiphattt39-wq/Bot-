@@ -1,0 +1,98 @@
+import discord
+from discord import app_commands
+from discord.ext import commands
+from datetime import datetime
+import re
+
+# ===================== CẤU HÌNH =====================
+TOKEN = "TOKEN YOU"
+
+# 🔐 CHỦ BOT
+ID_CHU_BOT = 1479375774711549996
+
+# 🎖️ ROLE BẰNG LÁI QUÂN SỰ
+ROLE_BANG_LAI = 1540599978697957406
+
+# ⚖️ NGƯỠNG ĐIỂM
+DIEM_DAT = 50
+# =====================================================
+
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+def la_chu_bot(user):
+    return user.id == ID_CHU_BOT
+
+# ===================== LỆNH THÔNG BÁO =====================
+@bot.tree.command(name="announcement", description="📢 Gửi thông báo")
+async def announcement(interaction: discord.Interaction, noi_dung: str):
+    if not la_chu_bot(interaction.user):
+        return await interaction.response.send_message("❌ CHỈ CHỦ BOT MỚI ĐƯỢC!", ephemeral=True)
+    
+    emb = discord.Embed(
+        title="📢 THÔNG BÁO",
+        description=noi_dung,
+        color=discord.Color.gold(),
+        timestamp=datetime.now()
+    )
+    emb.set_footer(text=f"Người gửi: {interaction.user}", icon_url=interaction.user.avatar.url if interaction.user.avatar else None)
+    
+    await interaction.response.send_message(embed=emb)
+
+# ===================== TỰ KIỂM TRA & CẤP BẰNG =====================
+@bot.event
+async def on_message(message):
+    if message.author.bot: return
+
+    nd = message.content
+
+    # ✅ LẤY SỐ ĐIỂM TRONG TIN NHẮN
+    tim_diem = re.search(r"(\d+)", nd)
+    if not tim_diem:
+        return
+
+    diem = int(tim_diem.group(1))
+
+    if diem >= DIEM_DAT:
+        # ✅ ≥50 → ĐỖ + CẤP BẰNG
+        await message.add_reaction("✅")
+        try:
+            role = message.guild.get_role(ROLE_BANG_LAI)
+            if role and role not in message.author.roles:
+                await message.author.add_roles(role, reason=f"✅ Đỗ bằng lái quân sự - {diem} điểm")
+                await message.channel.send(f"""
+✅ **ĐỖ BẰNG LÁI PHƯƠNG TIỆN QUÂN SỰ!**
+👤 Người: {message.author.mention}
+📊 Điểm: **{diem}/100**
+🎖️ Đã cấp BẰNG LÁI QUÂN SỰ!
+                """)
+        except Exception as e:
+            print(f"Lỗi cấp role: {e}")
+    else:
+        # ❌ <50 → TRƯỢT, KHÔNG CẤP
+        await message.add_reaction("❌")
+        await message.channel.send(f"""
+❌ **KHÔNG ĐỦ ĐIỂM - KHÔNG CẤP BẰNG!**
+👤 Người: {message.author.mention}
+📊 Điểm: **{diem}/100**
+⚠️ Yêu cầu: ≥50 điểm mới được cấp bằng lái quân sự
+        """)
+
+# === BOT ONLINE ===
+@bot.event
+async def on_ready():
+    print(f"""
+{'='*65}
+🚗 SUPPORT AND MANAGEMENT OF MILITARY VEHICLES AND TRANSPORTATION
+{'='*65}
+✅ BOT: {bot.user}
+👑 Chủ Bot: <@{ID_CHU_BOT}>
+📊 ≥50 điểm → ✅ CẤP BẰNG LÁI QUÂN SỰ
+📊 <50 điểm → ❌ KHÔNG CẤP
+🎖️ Role bằng: <@&{ROLE_BANG_LAI}>
+📢 Có lệnh /announcement gửi thông báo
+{'='*65}
+    """)
+
+bot.run(TOKEN)
+                   
