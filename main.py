@@ -333,6 +333,6 @@ from keep_alive import keep_alive
 
 if __name__ == "__main__":
     print("🔄 ĐANG KHỞI ĐỘNG...")
-    keep_alive()       # ← Bật web giữ bot treo
-    chay_bot_ben()     # ← Khởi động bot Discord
+    keep_alive()       # Bật web giữ bot treo
+    chay_bot_ben()     # Khởi động bot Discord
     
