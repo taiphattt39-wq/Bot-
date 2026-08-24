@@ -103,3 +103,14 @@ if __name__ == "__main__":
     else:
         print("Lỗi: Không tìm thấy DISCORD_TOKEN.")
                   
+# 1. Khởi tạo Web Server cho Render ẩn
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot đang chạy ổn định!"
+...
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+    
