@@ -328,6 +328,11 @@ def chay_bot_ben():
             continue
         else:
             break
-if __name__ == "__main__":
-    chay_bot_ben()
+# ==================== ĐÁNH THỨC & CHẠY BOT ====================
+from keep_alive import keep_alive
 
+if __name__ == "__main__":
+    print("🔄 ĐANG KHỞI ĐỘNG...")
+    keep_alive()       # ← Bật web giữ bot treo
+    chay_bot_ben()     # ← Khởi động bot Discord
+    
