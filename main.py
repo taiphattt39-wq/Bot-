@@ -1,1 +1,2 @@
-TOKEN = "MTUzNDAxOTE4NzIwOTQwODU1Mw.G7DQOk.wbjCnMb9vTn5iW0I2vqBrb1eiYKvk9H1c-NKT0"
+TOKEN = os.getenv("TOKEN", "")
+API_KEY_GEMINI = os.getenv("API_KEY_GEMINI", "")  # Để trống cũng được
