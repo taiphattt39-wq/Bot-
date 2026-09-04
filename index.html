@@ -28,7 +28,6 @@
         .section-title { text-align: center; margin-bottom: 30px; color: #2e7d32; font-size: 1.8rem; position: relative; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #f57c00; margin: 8px auto 0; }
 
-        /* Danh sách sản phẩm */
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 45px; }
         .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: transform 0.3s; border: 1px solid #e0e0e0; }
         .product-card:hover { transform: translateY(-5px); }
@@ -44,14 +43,12 @@
         .btn-buy { display: inline-block; width: 100%; background: #2e7d32; color: white; padding: 12px; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; text-decoration: none; transition: background 0.2s; }
         .btn-buy:hover { background: #1b5e20; }
 
-        /* Khung Form tự gửi đánh giá trực tiếp */
         .review-form { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 45px; border: 1px solid #e0e0e0; }
         .review-form h3 { color: #2e7d32; margin-bottom: 15px; font-size: 1.3rem; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem; }
         .form-control { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
         
-        /* Chọn số sao trực quan */
         .star-rating { display: flex; gap: 8px; font-size: 1.8rem; cursor: pointer; margin-bottom: 10px; }
         .star { color: #ccc; transition: color 0.1s; }
         .star.active { color: #ffca28; }
@@ -59,14 +56,12 @@
         .btn-submit { display: inline-block; width: 100%; max-width: 200px; background: #f57c00; color: white; padding: 12px 20px; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; }
         .btn-submit:hover { background: #e65100; }
 
-        /* Khu vực Đánh giá hiển thị */
         .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 45px; }
-        .review-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12 rgba(0,0,0,0.04); border-top: 4px solid #2e7d32; }
+        .review-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border-top: 4px solid #2e7d32; }
         .stars { color: #ffca28; font-size: 1.2rem; margin-bottom: 8px; }
         .review-text { font-size: 0.95rem; color: #444; font-style: italic; margin-bottom: 12px; line-height: 1.4; }
         .review-author { font-size: 0.9rem; font-weight: bold; color: #1b5e20; text-align: right; }
 
-        /* Thông tin liên hệ */
         .contact-box { background: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 5px solid #f57c00; margin-top: 20px; }
         .contact-box h3 { color: #2e7d32; margin-bottom: 10px; font-size: 1.5rem; }
         .hotline { font-size: 1.8rem; color: #d32f2f; font-weight: bold; margin: 15px 0; display: block; text-decoration: none; }
@@ -79,42 +74,14 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>BÁNH TÉT & BÁNH ÍT PHƯỢNG</h1>
         <p>✨ Hương vị truyền thống - Đậm đà bản sắc quê hương ✨</p>
     </header>
-
     <div class="shipping-alert">
         📍 <span class="blink-text">( Mới )</span> Tiệm chỉ nhận giao hàng khu vực tỉnh ĐỒNG THÁP để bánh luôn đảm bảo nóng hổi và thơm ngon nhất!
     </div>
-
-    <div class="container">
-        <!-- Khung sản phẩm -->
-        <h2 class="section-title">Danh Sách Bánh Ngon Hôm Nay</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-img">🍃<span class="badge">Đặc sản</span></div>
-                <div class="product-info">
-                    <h3 class="product-name">Bánh Tét Phượng</h3>
-                    <p class="product-desc">Có sẵn các loại nhân thơm ngon: <b>Nhân Mỡ, Nhân Chuối, Nhân Đậu Ngọt</b>.</p>
-                    <div class="product-price">17.000đ <small>/ Đòn</small></div>
-                    <button class="btn-buy" onclick="datMua('Bánh Tét (Mỡ/Chuối/Đậu ngọt)')">Đặt Mua Bánh Tét</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img">🥥<span class="badge">Ăn vặt</span></div>
-                <div class="product-info">
-                    <h3 class="product-name">Bánh Ít Phượng</h3>
-                    <p class="product-desc">Vỏ bánh dẻo mịn thơm nhẹ, nhân đa dạng lựa chọn: <b>Đậu Ngọt, Đậu Xanh</b>.</p>
-                    <div class="product-price">7.000đ <small>/ Cái</small></div>
-                    <button class="btn-buy" onclick="datMua('Bánh Ít (Đậu ngọt/Đậu xanh)')">Đặt Mua Bánh Ít</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Khung Form tự gửi đánh giá trực tiếp trên Web -->
+            <!-- Khung Form tự gửi đánh giá trực tiếp trên Web -->
         <div class="review-form">
             <h3>✍️ Chia sẻ cảm nhận về Bánh Phượng:</h3>
             <br>
@@ -136,7 +103,7 @@
                 <label>Nội dung đánh giá bánh:</label>
                 <textarea id="reviewContent" class="form-control" rows="3" placeholder="Chia sẻ cảm nhận của bạn về độ ngon của bánh..."></textarea>
             </div>
-            <button class="btn-submit" onclick="guiDanhGia()">Đăng Đánh Giá</button>
+            <button class="btn-submit" id="btnSubmitReview">Đăng Đánh Giá</button>
         </div>
 
         <!-- Khung danh sách hiển thị đánh giá -->
@@ -153,89 +120,105 @@
                 <div class="review-author">— Anh Minh (Sa Đéc)</div>
             </div>
         </div>
-
-        <!-- Thông tin liên hệ -->
+                <!-- Thông tin liên hệ -->
         <h2 class="section-title">Thông Tin Liên Hệ</h2>
         <div class="contact-box">
             <h3>Bánh Mới Ra Lò Mỗi Ngày - Nhận Giao Hàng Toàn Tỉnh Đồng Tháp</h3>
             <p>Quý khách vui lòng liên hệ trước qua Hotline hoặc Zalo để đặt loại nhân yêu thích.</p>
             <a href="tel:0373778016" class="hotline">📞 Gọi Ngay: 0373.778.016</a>
-                    <a href="https://zalo.me" target="_blank" class="btn-zalo">💬 Nhắn Tin Qua Zalo Đặt Bánh</a>
-        <br>
-        <button class="btn-copy" onclick="saoChepLienHe()">📋 Sao chép thông tin liên hệ</button>
+            <a href="https://zalo.me" target="_blank" class="btn-zalo">💬 Nhắn Tin Qua Zalo Đặt Bánh</a>
+            <br>
+            <button class="btn-copy" id="btnCopyContact">📋 Sao chép thông tin liên hệ</button>
+        </div>
     </div>
-</div>
 
-<footer>
-    <p>© 2026 Bánh Tét Bánh Ít Phượng. Đã đăng ký bản quyền tại Đồng Tháp.</p>
-</footer>
+    <footer>
+        <p>© 2026 Bánh Tét Bánh Ít Phượng. Đã đăng ký bản quyền tại Đồng Tháp.</p>
+    </footer>
 
-<script>
-    function datMua(tenBanh) {
-        alert("Bạn đang chọn mua: " + tenBanh + "\nHệ thống sẽ tự động chuyển bạn sang Zalo số điện thoại 0373.778.016 để chốt đơn nhé!");
-        window.open("https://zalo.me", "_blank");
-    }
+    <script>
+        function datMua(tenBanh) {
+            alert("Bạn đang chọn mua: " + tenBanh + "\nHệ thống sẽ tự động chuyển bạn sang Zalo số điện thoại 0373.778.016 để chốt đơn nhé!");
+            window.open("https://zalo.me", "_blank");
+        }
 
-    let selectedStars = 5;
-    const starNodes = document.querySelectorAll('#starRating .star');
+        let selectedStars = 5;
 
-    starNodes.forEach((star, index) => {
-        star.addEventListener('click', function() {
-            selectedStars = parseInt(this.getAttribute('data-value'));
-            starNodes.forEach((s, idx) => {
-                if (idx < selectedStars) {
-                    s.classList.add('active');
+        document.addEventListener("DOMContentLoaded", function() {
+            const starNodes = document.querySelectorAll('#starRating .star');
+            
+            starNodes.forEach((star) => {
+                star.addEventListener('click', function() {
+                    selectedStars = parseInt(this.getAttribute('data-value'));
+                    starNodes.forEach((s, idx) => {
+                        if (idx < selectedStars) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            document.getElementById("btnSubmitReview").addEventListener("click", function() {
+                const nameInput = document.getElementById('reviewerName').value.trim();
+                const contentInput = document.getElementById('reviewContent').value.trim();
+
+                if (!nameInput || !contentInput) {
+                    alert("Vui lòng điền đầy đủ tên và nội dung nhận xét nha bạn!");
+                    return;
+                }
+
+                let starString = '';
+                for (let i = 0; i < selectedStars; i++) {
+                    starString += '⭐';
+                }
+
+                const newCard = document.createElement('div');
+                newCard.className = 'review-card';
+                newCard.innerHTML = `
+                    <div class="stars">${starString}</div>
+                    <p class="review-text">"${contentInput}"</p>
+                    <div class="review-author">— ${nameInput}</div>
+                `;
+
+                const container = document.getElementById('reviewContainer');
+                container.insertBefore(newCard, container.firstChild);
+
+                document.getElementById('reviewerName').value = '';
+                document.getElementById('reviewContent').value = '';
+                alert("Cảm ơn bạn đã gửi đánh giá cho tiệm bánh Phượng nhé!");
+            });
+
+            document.getElementById("btnCopyContact").addEventListener("click", function() {
+                const textToCopy = "Bánh Tét & Bánh Ít Phượng Đồng Tháp - Hotline/Zalo: 0373.778.016 (Bánh mới ra lò mỗi ngày, giao hàng toàn tỉnh Đồng Tháp)";
+                
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(textToCopy).then(function() {
+                        alert("Đã sao chép thông tin liên hệ thành công!");
+                    }).catch(function() {
+                        fallbackCopy(textToCopy);
+                    });
                 } else {
-                    s.classList.remove('active');
+                    fallbackCopy(textToCopy);
                 }
             });
         });
-    });
 
-    function guiDanhGia() {
-        const nameInput = document.getElementById('reviewerName').value.trim();
-        const contentInput = document.getElementById('reviewContent').value.trim();
-
-        if (!nameInput || !contentInput) {
-            alert("Vui lòng điền đầy đủ tên và nội dung nhận xét nha bạn!");
-            return;
-        }
-
-        let starString = '';
-        for (let i = 0; i < selectedStars; i++) {
-            starString += '⭐';
-        }
-
-        const newCard = document.createElement('div');
-        newCard.className = 'review-card';
-        newCard.innerHTML = `
-            <div class="stars">${starString}</div>
-            <p class="review-text">"${contentInput}"</p>
-            <div class="review-author">— ${nameInput}</div>
-        `;
-
-        const container = document.getElementById('reviewContainer');
-        container.insertBefore(newCard, container.firstChild);
-
-        document.getElementById('reviewerName').value = '';
-        document.getElementById('reviewContent').value = '';
-        alert("Cảm ơn bạn đã gửi đánh giá cho tiệm bánh Phượng nhé!");
-    }
-
-    function saoChepLienHe() {
-        const textToCopy = "Bánh Tét & Bánh Ít Phượng Đồng Tháp - Hotline/Zalo: 0373.778.016 (Bánh mới ra lò mỗi ngày, giao hàng toàn tỉnh Đồng Tháp)";
-        navigator.clipboard.writeText(textToCopy).then(function() {
-            alert("Đã sao chép thông tin liên hệ thành công!");
-        }).catch(function(err) {
+        function fallbackCopy(text) {
             const textArea = document.createElement("textarea");
-            textArea.value = textToCopy;
+            textArea.value = text;
+            textArea.style.position = "fixed";
             document.body.appendChild(textArea);
             textArea.select();
-            document.execCommand('copy');
+            try {
+                document.execCommand('copy');
+                alert("Đã sao chép thông tin liên hệ thành công!");
+            } catch (err) {
+                alert("Trình duyệt không hỗ trợ tự sao chép, bạn hãy tự copy dòng hotline nhé!");
+            }
             document.body.removeChild(textArea);
-            alert("Đã sao chép thông tin liên hệ thành công!");
-        });
-    }
-</script>
+        }
+    </script>
 </body>
 </html>
