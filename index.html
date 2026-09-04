@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bánh Tét & Bánh Ít Phượng - Đặc Sản Thơm Ngon</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9f6f0; color: #333; }
+        
+        /* Header & Banner chính */
+        header { background: linear-gradient(135deg, #2e7d32, #1b5e20); color: white; text-align: center; padding: 40px 20px; position: relative; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
+        header p { font-size: 1.1rem; opacity: 0.9; font-style: italic; }
+
+        /* Khung thông báo chỉ giao Đồng Tháp (Mới) */
+        .shipping-alert {
+            background-color: #fff3cd;
+            color: #856404;
+            text-align: center;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #ffeeba;
+        }
+        .blink-text {
+            color: #d32f2f;
+            animation: blinker 1.2s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        /* Khung chứa nội dung */
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 30px; color: #2e7d32; font-size: 1.8rem; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #f57c00; margin: 8px auto 0; }
+
+        /* Danh sách sản phẩm (Grid) */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: transform 0.3s; border: 1px solid #e0e0e0; }
+        .product-card:hover { transform: translateY(-5px); }
+        
+        /* Hình ảnh minh họa bánh */
+        .product-img { height: 200px; background-color: #e8f5e9; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; }
+        .badge { position: absolute; top: 10px; left: 10px; background: #f57c00; color: white; padding: 4px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 20px; }
+
+        .product-info { padding: 20px; text-align: center; }
+        .product-name { font-size: 1.3rem; margin-bottom: 8px; color: #1b5e20; }
+        .product-desc { font-size: 0.9rem; color: #666; margin-bottom: 15px; height: 40px; overflow: hidden; }
+        .product-price { font-size: 1.4rem; color: #d32f2f; font-weight: bold; margin-bottom: 15px; }
+        
+        /* Nút mua hàng */
+        .btn-buy { display: inline-block; width: 100%; background: #2e7d32; color: white; padding: 10px; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+        .btn-buy:hover { background: #1b5e20; }
+
+        /* Phần liên hệ hotline */
+        .contact-box { background: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-left: 5px solid #f57c00; }
+        .contact-box h3 { color: #2e7d32; margin-bottom: 10px; font-size: 1.5rem; }
+        .hotline { font-size: 1.8rem; color: #d32f2f; font-weight: bold; margin: 15px 0; display: block; text-decoration: none; }
+        .btn-zalo { display: inline-block; background: #0068ff; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,104,255,0.3); }
+
+        footer { text-align: center; padding: 20px; background: #222; color: #aaa; font-size: 0.9rem; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- Bảng hiệu của tiệm -->
+    <header>
+        <h1>BÁNH TÉT & BÁNH ÍT PHƯỢNG</h1>
+        <p>✨ Hương vị truyền thống - Đậm đà bản sắc quê hương ✨</p>
+    </header>
+
+    <!-- Dòng thông báo khu vực giao hàng -->
+    <div class="shipping-alert">
+        📍 <span class="blink-text">( Mới )</span> Tiệm chỉ nhận giao hàng khu vực tỉnh ĐỒNG THÁP để bánh luôn đảm bảo nóng hổi và thơm ngon nhất!
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Danh Sách Bánh Ngon Hôm Nay</h2>
+        
+        <div class="products-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    🍃
+                    <span class="badge">Bán chạy</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bánh Tét Nhân Thịt Mỡ</h3>
+                    <p class="product-desc">Nếp dẻo thơm hạt, nhân đậu xanh bùi bùi quyện cùng thịt mỡ béo ngậy.</p>
+                    <div class="product-price">80.000đ <small>/ Đòn</small></div>
+                    <button class="btn-buy" onclick="datMua('Bánh Tét Nhân Thịt Mỡ')">Đặt Mua Ngay</button>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    🥚
+                    <span class="badge">Đặc biệt</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bánh Tét Thập Cẩm Trứng Muối</h3>
+                    <p class="product-desc">Sự kết hợp hoàn hảo giữa tôm khô, lạp xưởng và lòng đỏ trứng muối đậm đà.</p>
+                    <div class="product-price">110.000đ <small>/ Đòn</small></div>
+                    <button class="btn-buy" onclick="datMua('Bánh Tét Thập Cẩm Trứng Muối')">Đặt Mua Ngay</button>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    🥥
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bánh Ít Nhân Dừa</h3>
+                    <p class="product-desc">Vỏ bánh ít từ nếp xốp dẻo mịn, ôm trọn lớp nhân dừa xào đường thốt nốt ngọt lịm.</p>
+                    <div class="product-price">7.000đ <small>/ Cái</small></div>
+                    <button class="btn-buy" onclick="datMua('Bánh Ít Nhân Dừa')">Đặt Mua Ngay</button>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    🥜
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bánh Ít Nhân Đậu Xanh</h3>
+                    <p class="product-desc">Vỏ bánh lá gai thơm nhẹ, nhân đậu xanh nhuyễn mịn ngọt thanh vừa vặn.</p>
+                    <div class="product-price">7.000đ <small>/ Cái</small></div>
+                    <button class="btn-buy" onclick="datMua('Bánh Ít Nhân Đậu Xanh')">Đặt Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thông tin đặt hàng -->
+        <h2 class="section-title">Thông Tin Liên Hệ</h2>
+        <div class="contact-box">
+            <h3>Bánh Mới Ra Lò Mỗi Ngày - Nhận Giao Hàng Tận Nơi Toàn Tỉnh Đồng Tháp</h3>
+            <p>Quý khách ở các khu vực Đồng Tháp vui lòng liên hệ trước để tiệm xếp lịch giao bánh đúng giờ.</p>
+            <a href="tel:0900000000" class="hotline">📞 090.xxx.xxxx</a>
+            <a href="https://zalo.me" target="_blank" class="btn-zalo">💬 Nhắn Tin Qua Zalo Đặt Bánh</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Bánh Tét Bánh Ít Phượng. Đã đăng ký bản quyền thương hiệu tại Đồng Tháp.</p>
+    </footer>
+
+    <script>
+        function datMua(tenBanh) {
+            alert("Bạn đã chọn đặt mua: " + tenBanh + "\nHệ thống sẽ chuyển bạn đến tổng đài tư vấn Bánh Phượng Đồng Tháp!");
+            window.open("https://zalo.me", "_blank");
+        }
+    </script>
+</body>
+      </html>
+      
