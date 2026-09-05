@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ Trợ Luận Văn Tâm Lý Học</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F3460', // XANH DƯƠNG ĐẬM CHÍNH
+                        secondary: '#16537E',
+                        light: '#E9F1FA'
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', sans-serif; }
+        .shadow-custom { box-shadow: 0 10px 25px -5px rgba(15, 52, 96, 0.1); }
+        .btn-hover { transition: all 0.3s ease; }
+        .btn-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 20px rgba(15, 52, 96, 0.25); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+    <!-- Thanh điều hướng cố định -->
+    <header id="navbar" class="w-full bg-white/95 backdrop-blur-sm fixed top-0 left-0 z-50 shadow-sm transition-all">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary flex items-center gap-2">
+                <i class="fas fa-brain"></i>
+                <span>Mentor Luận Văn</span>
+            </a>
+            
+            <nav class="hidden md:flex gap-8 font-medium text-gray-600">
+                <a href="#trangchu" class="hover:text-primary transition-colors">Trang chủ</a>
+                <a href="#gioithieu" class="hover:text-primary transition-colors">Giới thiệu</a>
+                <a href="#dichvu" class="hover:text-primary transition-colors">Dịch vụ</a>
+                <a href="#lienhe" class="hover:text-primary transition-colors">Liên hệ</a>
+            </nav>
+
+            <button id="menuBtn" class="md:hidden text-xl text-primary">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden hidden bg-white px-6 pb-5 space-y-3 shadow-md">
+            <a href="#trangchu" class="block hover:text-primary">Trang chủ</a>
+            <a href="#gioithieu" class="block hover:text-primary">Giới thiệu</a>
+            <a href="#dichvu" class="block hover:text-primary">Dịch vụ</a>
+            <a href="#lienhe" class="block hover:text-primary">Liên hệ</a>
+        </div>
+    </header>
+
+    <!-- Phần chính -->
+    <main class="pt-28">
+        <!-- Banner -->
+        <section id="trangchu" class="bg-gradient-to-br from-primary via-secondary to-primary text-white py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 leading-tight">
+                    Hỗ Trợ Luận Văn Chuyên Ngành <br>Tâm Lý Học
+                </h1>
+                <p class="text-xl md:text-2xl opacity-95 mb-8 leading-relaxed">
+                    Tận tâm • Chuyên môn • Đúng tiến độ • Bảo mật tuyệt đối
+                </p>
+                <a href="#lienhe" class="inline-block bg-white text-primary font-semibold px-10 py-4 rounded-lg btn-hover shadow-lg">
+                    <i class="fas fa-phone mr-2"></i>Liên Hệ Ngay
+                </a>
+            </div>
+        </section>
+
+        <!-- Giới thiệu -->
+        <section id="gioithieu" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Về Tôi</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Có nhiều kinh nghiệm nghiên cứu và hướng dẫn trong lĩnh vực <strong>Tâm lý học</strong>. 
+                        Hỗ trợ chi tiết từ xây dựng ý tưởng, cấu trúc bài khoa học đến chỉnh sửa ngôn ngữ, 
+                        định dạng chuẩn đại học và xử lý dữ liệu chuyên ngành.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="bg-light p-8 rounded-xl shadow-custom text-center">
+                        <div class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-full mx-auto mb-6">
+                            <i class="fas fa-graduation-cap text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-3">Chuyên môn sâu</h3>
+                        <p class="text-gray-600">Am hiểu cấu trúc, yêu cầu và đặc thù ngành Tâm lý học</p>
+                    </div>
+                    
+                    <div class="bg-light p-8 rounded-xl shadow-custom text-center">
+                        <div class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-full mx-auto mb-6">
+                            <i class="fas fa-bolt text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-3">Đúng hạn</h3>
+                        <p class="text-gray-600">Luôn đảm bảo tiến độ, tư vấn phản hồi nhanh chóng</p>
+                    </div>
+                    
+                    <div class="bg-light p-8 rounded-xl shadow-custom text-center">
+                        <div class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-full mx-auto mb-6">
+                            <i class="fas fa-shield-alt text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-3">Bảo mật thông tin</h3>
+                        <p class="text-gray-600">Giữ bí mật tuyệt đối nội dung và dữ liệu của bạn</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dịch vụ -->
+        <section id="dichvu" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-16">Dịch Vụ Chính</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-custom border-t-4 border-primary">
+                        <div class="text-primary text-3xl mb-5"><i class="fas fa-edit"></i></div>
+                        <h3 class="font-semibold text-xl mb-4">Sửa & Hoàn Thiện Bài</h3>
+                        <p class="text-gray-600">Chỉnh sửa ngôn ngữ, chính tả, định dạng bố cục chuẩn, dễ đọc và logic</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-custom border-t-4 border-primary">
+                        <div class="text-primary text-3xl mb-5"><i class="fas fa-compass"></i></div>
+                        <h3 class="font-semibold text-xl mb-4">Định Hướng & Đề Tài</h3>
+                        <p class="text-gray-600">Gợi ý đề tài phù hợp, khả thi; Hướng dẫn xây dựng dàn ý, cấu trúc hoàn chỉnh</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-custom border-t-4 border-primary">
+                        <div class="text-primary text-3xl mb-5"><i class="fas fa-chart-bar"></i></div>
+                        <h3 class="font-semibold text-xl mb-4">Phân Tích & Xử Lý Dữ Liệu</h3>
+                        <p class="text-gray-600">Hỗ trợ xử lý số liệu, phân tích kết quả, giải thích và trình bày bảng biểu minh họa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Liên hệ -->
+        <section id="lienhe" class="py-20 bg-primary text-white">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Liên Hệ Tư Vấn</h2>
+                <p class="text-xl opacity-95 mb-10">Đặt lịch và trao đổi trực tiếp qua số điện thoại/Zalo:</p>
+                
+                <a href="tel:0978082480" class="inline-flex items-center gap-3 bg-white text-primary font-bold text-xl px-10 py-5 rounded-lg btn-hover">
+                    <i class="fas fa-phone-alt"></i> 0978 082 480
+                </a>
+                
+                <div class="mt-12 grid md:grid-cols-2 gap-6 text-left bg-white/10 p-8 rounded-xl">
+                    <div>
+                        <h4 class="font-semibold mb-2"><i class="fas fa-clock mr-2"></i>Thời gian làm việc</h4>
+                        <p>Tất cả các ngày trong tuần<br>8:00 sáng – 21:00 tối</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2"><i class="fas fa-user-check mr-2"></i>Đối tượng</h4>
+                        <p>Sinh viên, Học viên cao học<br>Ngành Tâm lý học & các lĩnh vực liên quan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chân trang -->
+    <footer class="bg-gray-900 text-gray-300 py-10 text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-lg font-medium text-white mb-2">Chuyên gia Hỗ trợ Luận Văn Tâm Lý Học</p>
+            <p class="mb-4">Điện thoại/Zalo: 0978 082 480</p>
+            <p class="text-sm opacity-75">© 2026 — Toàn quyền nội dung, không trích xuất khi chưa được phép</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu di động
+        document.getElementById('menuBtn').addEventListener('click', function(){
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Đóng menu khi bấm link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Hiệu ứng cuộn thanh điều hướng
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            window.scrollY > 10 ? nav.classList.add('shadow-md') : nav.classList.remove('shadow-md');
+        });
+    </script>
+</body>
+                                                                                              </html>
+                                                                                              
